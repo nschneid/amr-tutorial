@@ -1,9 +1,9 @@
 \PassOptionsToPackage{usenames}{color}
-\documentclass[12pt,a4paper]{article}
-\usepackage[margin=1in]{geometry}
+\documentclass[11pt,letterpaper]{article}
+%\usepackage[a4paper,margin=1in]{geometry}
 
 \usepackage{relsize} % relative font sizes (e.g. \smaller). must precede ACL style
-%\usepackage{style/acl2012}
+\usepackage{naaclhlt2015}
 \usepackage[colorlinks=true,linkcolor=black,citecolor=black,filecolor=black,urlcolor=black]{hyperref}
 \usepackage{natbib}
 
@@ -187,12 +187,12 @@
 
 % Space savers
 % From http://www.eng.cam.ac.uk/help/tpl/textprocessing/squeeze.html
-\addtolength{\dbltextfloatsep}{-.5cm} % space between last top float or first bottom float and the text.
-\addtolength{\intextsep}{-.5cm} % space left on top and bottom of an in-text float.
-\addtolength{\abovedisplayskip}{-.5cm} % space before maths
-\addtolength{\belowdisplayskip}{-.5cm} % space after maths
-%\addtolength{\topsep}{-.5cm} %space between first item and preceding paragraph
-\setlength{\belowcaptionskip}{-.25cm}
+% \addtolength{\dbltextfloatsep}{-.5cm} % space between last top float or first bottom float and the text.
+% \addtolength{\intextsep}{-.5cm} % space left on top and bottom of an in-text float.
+% \addtolength{\abovedisplayskip}{-.5cm} % space before maths
+% \addtolength{\belowdisplayskip}{-.5cm} % space after maths
+% %\addtolength{\topsep}{-.5cm} %space between first item and preceding paragraph
+% \setlength{\belowcaptionskip}{-.25cm}
 
 
 % customize \paragraph spacing
@@ -249,13 +249,13 @@
 \hyphenation{de-ve-lop-ed}
 \hyphenation{comb-over}
 
-\title{The Logic of AMR: Practical, Unified, \\ Graph-Based Sentence Semantics for NLP}
+\title{The Logic of AMR: Practical, Unified, Graph-Based\\ Sentence Semantics for NLP}
 
-\author{\textbf{Nathan Schneider}\\
+\author{Nathan Schneider\\
 	University of Edinburgh\\
 	{\tt nschneid@inf.ed.ac.uk}
-\and
-	\textbf{Jeffrey Flanigan}\\
+\And
+	Jeffrey Flanigan\\
 	Carnegie Mellon University\\
 	{\tt jflanigan@cs.cmu.edu}
 	    }
@@ -277,7 +277,7 @@
 \begin{document}
 \maketitle
 
-\abstract{\noindent
+\begin{abstract}
 This tutorial will offer a detailed introduction to the Abstract Meaning Representation (AMR) formalism 
 and its use for sentence semantics in NLP. Our goals are twofold. 
 First, we will describe the nature and design principles behind the representation, 
@@ -287,7 +287,8 @@ of the process by which it was created.
 Second, we will survey the state of the art for computation with AMRs. 
 This will focus on the task of parsing English text into AMR graphs, which 
 requires algorithms for alignment, for structured prediction, and for statistical learning. 
-Advances toward AMR-based machine translation and other multilingual studies\nss{vague} will be reviewed as well.}
+Advances toward AMR-based machine translation and other multilingual studies\nss{vague} will be reviewed as well.
+\end{abstract}
 
 \section{Introduction}
 
@@ -295,7 +296,7 @@ The Abstract Meaning Representation formalism \citep[AMR;][]{amr}
 is rapidly emerging as an important practical form of structured sentence semantics. 
 Conceived just a few years ago, AMR has enjoyed momentum thanks to 
 the ongoing development of large-scale annotated corpora 
-(\nss{\#} words annotated; \nss{\#} expected by the end of 2015).
+(20k sentences annotated; an additional 45k expected by the end of 2015).
 It has stimulated research in automata-theoretic formalisms \citep{jones-12,chiang-13}
 as well as structured prediction algorithms \citep{flanigan-14}.
 Following on the heels of the Fred Jelinek Memorial Workshop in Prague (summer, 2014), 
@@ -319,14 +320,14 @@ as well as a tentative schedule.
 
 \jmf{when we talk about the tutorial's goals and structure, we could mention that we'll briefly review structured prediction and discriminative training}
 
-\begin{figure}\centering
+\begin{figure*}\centering
 \includegraphics[width=.87\textwidth]{ginsburg.pdf}
 \caption{A sentence from a political blog (left) and its AMR graph (right). 
 Between them are fragments of the graph that would ideally be aligned to fragments of the sentence. 
 Near-paraphrases like \textit{Ginsburg said that we will be obligated to provide contraception to other people.}\ 
 would receive the same AMR.}
 \label{fig:ginsburg}
-\end{figure}
+\end{figure*}
 
 
 The need for an abstract meaning representation to disambiguate linguistic utterances, 
@@ -340,7 +341,7 @@ than others, and a few grammatical devices (including tense, aspect, number, and
 are treated as external to the representation.
 \Citeposs{amr} AMR is envisioned not as a new start for computational semantics, 
 but rather as a point of contact for bread-and-butter NLP tasks---%
-predicate sense disambiguation and semantic role labeling; 
+sense disambiguation and semantic role labeling for predicates in PropBank \citep{propbank,bonial-14}; 
 named entity recognition; nominal relation identification; 
 coreference resolution and entity linking---which are usually approached in isolation. 
 At the same time, it draws attention to certain semantic analysis problems that have been 
@@ -348,8 +349,27 @@ acknowledged but largely neglected, such as modality identification \citep{prabh
 AMR brings these NLP tasks under the umbrella of a single full-sentence semantics, 
 with a single evaluation. The example in \fref{fig:ginsburg} illustrates many of these components.
 
+Most of the advances in AMR thus far have been in formalizing the representation, 
+creating a large (and growing) corpus,\footnote{The AMR Bank, comprising 
+public data from \textit{The Little Prince} (\url{http://amr.isi.edu/download.html}) 
+and an LDC general release of sentences from ``newswire, weblogs and web discussion forums'' \citep{amr-ldc}.} 
+and working out how to predict AMRs for English sentences. 
+We expect that these developments will soon lead to applications 
+involving multilinguality, machine translation, paraphrasing, and summarization.
+
+\begin{figure}\centering
+\includegraphics[width=\columnwidth]{editor_zoomed.png}
+\caption{Ulf Hermjakob's AMR Editor for annotation includes a command line for fast entry and manipulation of AMRs, 
+predicate documentation from PropBank, a query tool for finding existing AMRs, automatic consistency-checking heuristics, 
+and extensive documentation of AMR conventions.}
+\label{fig:editor}
+\end{figure}
 
 \section{Agenda}
+
+Our primary topics will be English AMR annotation and parsing. 
+We will also give an overview (in less depth) of some promising theoretical and applied directions 
+that have been explored in preliminary work, but do not yet have empirical results.
 
 \begin{enumerate}
 \item The AMR formalism for English \begin{itemize}
@@ -366,7 +386,7 @@ with a single evaluation. The example in \fref{fig:ginsburg} illustrates many of
 \end{enumerate}
 \jmf{this list looks good to me, does it need to be more fine-grained? I could try to break the time down more precisely.}
 
-\section{Planning}
+\section{Logistics}
 
 The authors will hold dry runs of the tutorial at their respective institutions, 
 which will be especially important for debugging the hands-on activities. 
