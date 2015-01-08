@@ -181,7 +181,9 @@
 \newcommand{\Aref}[1]{Algorithm~\ref{#1}}
 \newcommand{\fnref}[1]{footnote~\ref{#1}}
 
-\newcommand{\citeposs}[1]{\citeauthor{#1}'s (\citeyear{#1})}
+\newcommand{\citeposs}[2][]{\citeauthor{#2}'s (\citeyear[#1]{#2})}
+\newcommand{\Citeposs}[2][]{\Citeauthor{#2}'s (\citeyear[#1]{#2})}
+
 
 % Space savers
 % From http://www.eng.cam.ac.uk/help/tpl/textprocessing/squeeze.html
@@ -276,7 +278,7 @@
 \maketitle
 
 \abstract{\noindent
-This tutorial will provide a detailed introduction to the Abstract Meaning Representation (AMR) formalism 
+This tutorial will offer a detailed introduction to the Abstract Meaning Representation (AMR) formalism 
 and its use for sentence semantics in NLP. Our goals are twofold. 
 First, we will describe the nature and design principles behind the representation, 
 and demonstrate that it can be practical for annotation. Participants will be coached in the basics of annotation 
@@ -289,7 +291,7 @@ Advances toward AMR-based machine translation and other multilingual studies\nss
 
 \section{Introduction}
 
-The Abstract Meaning Representation formalism \citep[AMR;]{banarescu-13} 
+The Abstract Meaning Representation formalism \citep[AMR;][]{amr} 
 is rapidly emerging as an important practical form of structured sentence semantics. 
 Conceived just a few years ago, AMR has enjoyed momentum thanks to 
 the ongoing development of large-scale annotated corpora 
@@ -314,7 +316,38 @@ as well as a tentative schedule.
 
 \section{Why AMR?}
 
+
 \jmf{when we talk about the tutorial's goals and structure, we could mention that we'll briefly review structured prediction and discriminative training}
+
+\begin{figure}\centering
+\includegraphics[width=.87\textwidth]{ginsburg.pdf}
+\caption{A sentence from a political blog (left) and its AMR graph (right). 
+Between them are fragments of the graph that would ideally be aligned to fragments of the sentence. 
+Near-paraphrases like \textit{Ginsburg said that we will be obligated to provide contraception to other people.}\ 
+would receive the same AMR.}
+\label{fig:ginsburg}
+\end{figure}
+
+
+The need for an abstract meaning representation to disambiguate linguistic utterances, 
+to expose meaning overlaps between utterances, and to mediate between multiple languages 
+was recognized in the era of interlingua-based MT \citep{dorr-98}. 
+The contemporary AMR reimagines such a formalism in light of the successes of data-driven NLP.
+Crucially, it was designed from the start for large-scale annotation. 
+In the interest of practicality, therefore, it establishes conventions for how different elements 
+of meaning are to be abstractly represented; necessarily, some elements are given a deeper treatment 
+than others, and a few grammatical devices (including tense, aspect, number, and definiteness) 
+are treated as external to the representation.
+\Citeposs{amr} AMR is envisioned not as a new start for computational semantics, 
+but rather as a point of contact for bread-and-butter NLP tasks---%
+predicate sense disambiguation and semantic role labeling; 
+named entity recognition; nominal relation identification; 
+coreference resolution and entity linking---which are usually approached in isolation. 
+At the same time, it draws attention to certain semantic analysis problems that have been 
+acknowledged but largely neglected, such as modality identification \citep{prabhakaran-12}.
+AMR brings these NLP tasks under the umbrella of a single full-sentence semantics, 
+with a single evaluation. The example in \fref{fig:ginsburg} illustrates many of these components.
+
 
 \section{Agenda}
 
@@ -323,7 +356,7 @@ as well as a tentative schedule.
 	\item How meaning is structured (20\%)
 	\item What is not represented, and how AMR differs from alternatives (10\%)
 	\item Annotation tools and data resources (5\%)
-	\item Guided annotation practice with the AMR Editor (10\%)
+	\item Guided annotation practice with the AMR Editor (15\%)
 	\end{itemize}
 \item Algorithms and applications \begin{itemize}
 	\item AMR alignment, parsing, and evaluation (30\%)
@@ -355,7 +388,7 @@ and the training and supervision of annotators.
 He will lead the first half of the tutorial.\\[-5pt]
 
 \noindent \textbf{Jeffrey Flanigan} (\url{http://www.cs.cmu.edu/~jmflanig/}) is a fifth year Ph.D. candidate at Carnegie Mellon University.
-He and his collaborators at CMU built the first broad-coverage AMR parser\citep{flanigan-14}.
+He and his collaborators at CMU built the first broad-coverage AMR parser \citep{flanigan-14}.
 He also participated in the Fred Jelinek Memorial Workshop in Prague in 2014, working on cross-lingual parsing and generation from AMR.
 His research areas include machine translation, summarization, and semantic dependency parsing.
 He will lead the second half of the tutorial.
