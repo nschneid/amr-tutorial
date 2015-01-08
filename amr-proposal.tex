@@ -318,8 +318,6 @@ as well as a tentative schedule.
 \section{Why AMR?}
 
 
-\jmf{when we talk about the tutorial's goals and structure, we could mention that we'll briefly review structured prediction and discriminative training}
-
 \begin{figure*}\centering
 \includegraphics[width=.87\textwidth]{ginsburg.pdf}
 \caption{A sentence from a political blog (left) and its AMR graph (right). 
@@ -357,6 +355,63 @@ and working out how to predict AMRs for English sentences.
 We expect that these developments will soon lead to applications 
 involving multilinguality, machine translation, paraphrasing, and summarization.
 
+
+
+\section{Agenda}
+
+Our primary topics will be English AMR annotation and parsing. 
+The first half will include an introduction of the PropBank lexical resource, on which AMR depends; 
+the second half will briefly review structured prediction and discriminative training 
+as background to the JAMR parser \citep{flanigan-14}.
+We will also give an overview (in less depth) of some promising theoretical and applied directions 
+that have been explored in preliminary work, but do not yet have empirical results.
+
+% \begin{enumerate}
+% \item The AMR formalism for English \begin{itemize}
+% 	\item How meaning is structured (20\%)
+% 	\item What is not represented, and how AMR differs from alternatives (10\%)
+% 	\item Annotation tools and data resources (5\%)
+% 	\item Guided annotation practice with the AMR Editor (15\%)
+% 	\end{itemize}
+% \item Algorithms and applications \begin{itemize}
+% 	\item AMR alignment, parsing, and evaluation (30\%)
+% 	\item Multilinguality, machine translation, and other applications (15\%)
+% 	\item Open challenges, criticisms, and limitations (5\%)
+% 	\end{itemize}
+% \end{enumerate}
+% \jmf{this list looks good to me, does it need to be more fine-grained? I could try to break the time down more precisely.}
+
+A tentative outline for the session is as follows 
+(at left are times in minutes):
+\begin{center}\small
+%\begin{table}
+\hypersetup{citecolor=mdblue}
+\noindent\begin{tabular}{@{}r@{~~}|r@{~}p{19em}|@{}}
+%\multicolumn{1}{@{}c}{\textbf{Min.}} & \multicolumn{1}{c@{}}{\textbf{Topic}} \\
+\cline{2-3}
+5 & \multicolumn{2}{l|}{Introduction}\\
+  & \textbf{I.} & \textbf{The AMR formalism for English} \citep{amr,amr-guidelines}\\
+30 & Ia. & How meaning is structured\\
+10 & Ib. & What is not represented, and how AMR differs from alternatives\\
+ 5 & Ic. & Annotation tools and data resources\\
+20 & Id. & Guided annotation practice with the AMR Editor (\fref{fig:editor})\\
+ 5 & Ie. & Discussion\\
+\cline{2-3}
+\multicolumn{1}{@{}r}{15} & \multicolumn{2}{l}{\textit{Coffee Break}}\\
+\cline{2-3}
+  & \textbf{II.} & \textbf{Algorithms and applications}\\
+10 & IIb. & 2 algorithms for alignment: JAMR's \citep{flanigan-14}, ISI's \citep{pourdamghani-14} \\
+40 & IIc. & Parsing as structured prediction: JAMR \citep{flanigan-14} \\
+ 5 & IId. & Evaluation: \texttt{smatch} \citep{cai-13} \\
+ 5 & IIe. & Cross-lingual issues: Is AMR an Interlingua? \citep{xue-14} \\
+ 5 & IIf. & Motivation for graph grammar formalisms \citep{braune-14} \\
+ 5 & IIg. & Promising applications (MT, summarization,~etc.) \\
+ 5 & \multicolumn{2}{l|}{Conclusion}\\
+\cline{2-3}
+\end{tabular}
+%\end{table}
+\end{center}
+
 \begin{figure}\centering
 \includegraphics[width=\columnwidth]{editor_zoomed.png}
 \caption{Ulf Hermjakob's AMR Editor for annotation includes a command line for fast entry and manipulation of AMRs, 
@@ -364,27 +419,6 @@ predicate documentation from PropBank, a query tool for finding existing AMRs, a
 and extensive documentation of AMR conventions.}
 \label{fig:editor}
 \end{figure}
-
-\section{Agenda}
-
-Our primary topics will be English AMR annotation and parsing. 
-We will also give an overview (in less depth) of some promising theoretical and applied directions 
-that have been explored in preliminary work, but do not yet have empirical results.
-
-\begin{enumerate}
-\item The AMR formalism for English \begin{itemize}
-	\item How meaning is structured (20\%)
-	\item What is not represented, and how AMR differs from alternatives (10\%)
-	\item Annotation tools and data resources (5\%)
-	\item Guided annotation practice with the AMR Editor (15\%)
-	\end{itemize}
-\item Algorithms and applications \begin{itemize}
-	\item AMR alignment, parsing, and evaluation (30\%)
-	\item Multilinguality, machine translation, and other applications (15\%)
-	\item Open challenges, criticisms, and limitations (5\%)
-	\end{itemize}
-\end{enumerate}
-\jmf{this list looks good to me, does it need to be more fine-grained? I could try to break the time down more precisely.}
 
 \section{Logistics}
 
