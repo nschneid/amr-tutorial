@@ -147,18 +147,18 @@
 
 
 \newcommand{\ensuretext}[1]{#1}
-\newcommand{\cjdmarker}{\ensuretext{\textcolor{green}{\ensuremath{^{\textsc{CJ}}_{\textsc{D}}}}}}
+\newcommand{\jmfmarker}{\ensuretext{\textcolor{green}{\ensuremath{^{\textsc{JM}}_{\textsc{F}}}}}}
+\newcommand{\cjdmarker}{\ensuretext{\textcolor{blue}{\ensuremath{^{\textsc{CJ}}_{\textsc{D}}}}}}
 \newcommand{\nssmarker}{\ensuretext{\textcolor{magenta}{\ensuremath{^{\textsc{NS}}_{\textsc{S}}}}}}
 \newcommand{\nasmarker}{\ensuretext{\textcolor{red}{\ensuremath{^{\textsc{NA}}_{\textsc{S}}}}}}
-\newcommand{\bomarker}{\ensuretext{\textcolor{blue}{\ensuremath{^{\textsc{B}}_{\textsc{O}}}}}}
 \newcommand{\jbmarker}{\ensuretext{\textcolor{orange}{\ensuremath{^{\textsc{J}}_{\textsc{B}}}}}}
 \newcommand{\dbmarker}{\ensuretext{\textcolor{purple}{\ensuremath{^{\textsc{D}}_{\textsc{B}}}}}}
 \newcommand{\arkcomment}[3]{\ensuretext{\textcolor{#3}{[#1 #2]}}}
 %\newcommand{\arkcomment}[3]{}
-\newcommand{\cjd}[1]{\arkcomment{\cjdmarker}{#1}{green}}
+\newcommand{\jmf}[1]{\arkcomment{\jmfmarker}{#1}{green}}
+\newcommand{\cjd}[1]{\arkcomment{\cjdmarker}{#1}{blue}}
 \newcommand{\nss}[1]{\arkcomment{\nssmarker}{#1}{magenta}}
 \newcommand{\nas}[1]{\arkcomment{\nasmarker}{#1}{red}}
-\newcommand{\bo}[1]{\arkcomment{\bomarker}{#1}{blue}}
 \newcommand{\jb}[1]{\arkcomment{\jbmarker}{#1}{orange}}
 \newcommand{\db}[1]{\arkcomment{\dbmarker}{#1}{purple}}
 \newcommand{\wts}{\mathbf{w}}
@@ -314,6 +314,8 @@ as well as a tentative schedule.
 
 \section{Why AMR?}
 
+\jmf{when we talk about the tutorial's goals and structure, we could mention that we'll briefly review structured prediction and discriminative training}
+
 \section{Agenda}
 
 \begin{enumerate}
@@ -329,6 +331,7 @@ as well as a tentative schedule.
 	\item Open challenges, criticisms, and limitations (5\%)
 	\end{itemize}
 \end{enumerate}
+\jmf{this list looks good to me, does it need to be more fine-grained? I could try to break the time down more precisely.}
 
 \section{Planning}
 
@@ -336,6 +339,7 @@ The authors will hold dry runs of the tutorial at their respective institutions,
 which will be especially important for debugging the hands-on activities. 
 
 \nss{venue; attendance; equipment required}
+\jmf{internet connection for people's laptops}
 
 \section{Instructors}
 
@@ -350,7 +354,11 @@ For most of these projects, he led the design of the annotation scheme, guidelin
 and the training and supervision of annotators.
 He will lead the first half of the tutorial.\\[-5pt]
 
-\noindent \textbf{Jeffrey Flanigan} (\url{http://www.cs.cmu.edu/~jmflanig/}) \nss{\ldots MT, built the FIRST EVAR realistic AMR parser, attended summer workshop}
+\noindent \textbf{Jeffrey Flanigan} (\url{http://www.cs.cmu.edu/~jmflanig/}) is a fifth year Ph.D. candidate at Carnegie Mellon University.
+He and his collaborators at CMU built the first broad-coverage AMR parser\citep{flanigan-14}.
+He also participated in the Fred Jelinek Memorial Workshop in Prague in 2014, working on cross-lingual parsing and generation from AMR.
+His research areas include machine translation, summarization, and semantic dependency parsing.
+He will lead the second half of the tutorial.
 
 \bibliographystyle{aclnat}
 % you bib file should really go here
