@@ -282,12 +282,12 @@ This tutorial will offer a detailed introduction to the Abstract Meaning Represe
 and its use for sentence semantics in NLP. Our goals are twofold. 
 First, we will describe the nature and design principles behind the representation, 
 and demonstrate that it can be practical for annotation. Participants will be coached in the basics of annotation 
-so they will be prepared to work with existing data with an understanding of the benefits and limitations 
+so that, when working with AMR data in the future, they will appreciate the benefits and limitations 
 of the process by which it was created. 
 Second, we will survey the state of the art for computation with AMRs. 
 This will focus on the task of parsing English text into AMR graphs, which 
 requires algorithms for alignment, for structured prediction, and for statistical learning. 
-Advances toward AMR-based machine translation and other multilingual studies\nss{vague} will be reviewed as well.
+Advances toward AMR-based machine translation and other applications will be reviewed as well.
 \end{abstract}
 
 \section{Introduction}
@@ -310,10 +310,9 @@ while the second half will focus on algorithms and applications.
 By the end of the first half, participants will have a firm grasp of the AMR representation, 
 which will help motivate the technical challenges of the second half.
 
-Below, we give an extremely brief description of how AMR works and why it has potential 
-as a convergence point\nss{?} for NLP research. 
-That will be followed by a high-level overview of the tutorial goals and structure, 
-as well as a tentative schedule.
+Below, we give a brief overview of AMR's design goals and why it has potential 
+as a convergence point for NLP research. 
+Following that is an outline of the tutorial structure and logistics.
 
 \section{Why AMR?}
 
@@ -338,12 +337,12 @@ of meaning are to be abstractly represented; necessarily, some elements are give
 than others, and a few grammatical devices (including tense, aspect, number, and definiteness) 
 are treated as external to the representation.
 \Citeposs{amr} AMR is envisioned not as a new start for computational semantics, 
-but rather as a point of contact for bread-and-butter NLP tasks---%
+but rather as a point of contact for bread-and-butter NLP tasks usually approached in isolation---%
 sense disambiguation and semantic role labeling for predicates in PropBank \citep{propbank,bonial-14}; 
 named entity recognition; nominal relation identification; 
-coreference resolution and entity linking---which are usually approached in isolation. 
+coreference resolution and entity linking. 
 At the same time, it draws attention to certain semantic analysis problems that have been 
-acknowledged but largely neglected, such as modality identification \citep{prabhakaran-12}.
+acknowledged but largely neglected in NLP, such as modality identification \citep{prabhakaran-12}.
 AMR brings these NLP tasks under the umbrella of a single full-sentence semantics, 
 with a single evaluation. The example in \fref{fig:ginsburg} illustrates many of these components.
 
@@ -423,7 +422,14 @@ relative clauses, coordination, subordination, etc.
 %\end{table}
 \end{center}
 
-\nss{guided practice}
+We propose to include a hands-on annotation exercise 
+so participants can experience firsthand the decision-making process 
+and challenges faced by the AMR annotators. 
+Participants will be granted access to the online AMR Editor 
+and assigned several real sentences to annotate at their own pace. 
+Instructors will answer questions and offer suggestions.
+Some of the same sentences will be assigned to multiple annotators so that,
+if time permits, they will have the opportunity to compare their AMRs. 
 
 \begin{figure}\centering
 \includegraphics[width=\columnwidth]{editor_zoomed.png}
@@ -435,11 +441,18 @@ and extensive documentation of AMR conventions.}
 
 \section{Logistics}
 
-The authors will hold dry runs of the tutorial at their respective institutions, 
-which will be especially important for debugging the hands-on activities. 
+We are prepared to present this tutorial at \mbox{NAACL-HLT} 2015 (Denver) or EMNLP 2015 (Lisbon). 
+NAACL would be our preferred venue.
+We estimate 20--30 attendees.
 
-\nss{venue; attendance; equipment required}
-\jmf{internet connection for people's laptops}
+The presenters' computer will require Internet access.
+Additionally, the annotation exercise will require participants have access to computers
+with Internet access.
+We will encourage them to bring laptops, but
+they will have the option of working in pairs, so it is not required for everyone to have a laptop. 
+
+The authors will hold dry runs of the tutorial at their respective institutions, 
+which will be especially helpful to calibrate the hands-on exercise. 
 
 \section{Instructors}
 
@@ -449,7 +462,7 @@ when he interned with Kevin Knight at ISI.
 His dissertation introduced a coarse-grained representation for lexical semantics that facilitates rapid annotation 
 and is practical for broad-coverage statistical NLP \citep{schneider-thesis}. 
 He has also worked on semantic parsing for the FrameNet representation \citep{das-14} 
-and other forms of annotation and processing for social media text \citep{gimpel-11,owoputi-13,schneider-13,kong-14,mohit-12}.
+and other forms of syntactic/semantic annotation and processing for social media text \citep{gimpel-11,owoputi-13,schneider-13,kong-14,mohit-12}.
 For most of these projects, he led the design of the annotation scheme, guidelines, and workflows, 
 and the training and supervision of annotators.
 He will lead the first half of the tutorial.\\[-5pt]
