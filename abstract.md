@@ -24,4 +24,4 @@ __[Tim O'Gorman](https://timjogorman.wordpress.com/)__ is a third year Linguisti
 
 ### Part II: Algorithms and Applications
 
-__[Jeffrey Flanigan](http://www.cs.cmu.edu/~jmflanig/)__ is a fifth year Ph.D. candidate at Carnegie Mellon University. He and his collaborators at CMU built the first broad-coverage [AMR parser](https://github.com/jflanigan/jamr/). He also participated in the Fred Jelinek Memorial Workshop in Prague in 2014, working on cross-lingual parsing and generation from AMR. His research areas include machine translation, summarization, and semantic dependency parsing.
+__[Jeffrey Flanigan](http://www.cs.cmu.edu/~jmflanig/)__ is a fifth year Ph.D. candidate at Carnegie Mellon University. He and his collaborators at CMU built the first broad-coverage [AMR parser](https://github.com/jflanigan/jamr/). He also participated in the Fred Jelinek Memorial Workshop in Prague in 2014, working on cross-lingual parsing and generation from AMR. His research areas include machine translation, generation, summarization, and semantic parsing.
