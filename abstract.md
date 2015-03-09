@@ -13,6 +13,8 @@ as a convergence point for NLP research. This tutorial unmasks the design philos
 
 The goals of this tutorial are twofold. First, it will describe the nature and design principles behind the representation, and demonstrate that it can be practical for annotation. In __Part I: The AMR Formalism__, participants will be coached in the basics of annotation so that, when working with AMR data in the future, they will appreciate the benefits and limitations of the process by which it was created. Second, the tutorial will survey the state of the art for computation with AMRs. __Part II: Algorithms and Applications__ will focus on the task of parsing English text into AMR graphs, which requires algorithms for alignment, for structured prediction, and for statistical learning. The tutorial will also address graph grammar formalisms that have been recently developed, and future applications such as AMR-based machine translation and summarization.
 
+Participants with laptops are encouraged to bring them to the tutorial.
+
 ## Instructors
 
 ### Part I: The AMR Formalism
