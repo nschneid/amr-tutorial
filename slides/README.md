@@ -5,7 +5,7 @@ This is a tutorial presented at NAACL 2015.
 
 [Full tutorial in pdf](https://github.com/nschneid/amr-tutorial/raw/master/slides/AMR-TUTORIAL-FULL.pdf)
 
-Outline
+##Outline
 
 * Part I - AMR Formalism
  * [Introduction](https://github.com/nschneid/amr-tutorial/raw/master/slides/1a-tutorial-intro.pdf)
