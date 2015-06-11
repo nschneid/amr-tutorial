@@ -1,7 +1,7 @@
 AMR Tutorial
 ============
 
-This is a tutorial presented at NAACL 2015.
+This is a [tutorial](http://naacl.org/naacl-hlt-2015/tutorial-amr-semantics.html) presented at NAACL 2015 by [Nathan Schneider](http://nathan.cl/), [Tim O’Gorman](https://timjogorman.wordpress.com/), and [Jeffrey Flanigan](http://www.cs.cmu.edu/~jmflanig/).
 
 [Full tutorial in pdf](https://github.com/nschneid/amr-tutorial/raw/master/slides/AMR-TUTORIAL-FULL.pdf)
 
