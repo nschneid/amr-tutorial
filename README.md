@@ -5,9 +5,11 @@ This is a [tutorial](http://naacl.org/naacl-hlt-2015/tutorial-amr-semantics.html
 
 [Full tutorial in pdf](https://github.com/nschneid/amr-tutorial/raw/master/slides/AMR-TUTORIAL-FULL.pdf)
 
-[Video](http://techtalks.tv/talks/the-logic-of-amr-practical-unified-graph-based-sentence-semantics-for-nlp/61564/)
+[ACL Anthology page](https://aclanthology.org/N15-4003/)
 
-##Outline
+(Video was recorded by not currently available online)
+
+## Outline
 
 * Part I - AMR Formalism
   * [Introduction](https://github.com/nschneid/amr-tutorial/raw/master/slides/1a-tutorial-intro.pdf)
